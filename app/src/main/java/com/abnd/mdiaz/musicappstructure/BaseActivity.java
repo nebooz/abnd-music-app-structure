@@ -76,7 +76,20 @@ public class BaseActivity extends AppCompatActivity {
 
     private void startAppActivities(Class inputClass) {
         Intent i = new Intent(getApplicationContext(), inputClass);
+
+        /*
+        This flag prevents the endless creation of existing activities.
+        There is no real reason to remove them in this app, so... with 6 activities at most,
+        It would be a maximum of 6 back button taps to leave the app.
+        */
         i.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+
+        /*
+        On click the activity is up, but, since it is no recreated because of the flag,
+        the drawer is open when switching activities and looks super weird.
+        This fixes that, but I think the drawer is not entirely closed before it initiates
+        the next activity.
+        */
         mDrawerLayout.closeDrawers();
         startActivity(i);
     }
