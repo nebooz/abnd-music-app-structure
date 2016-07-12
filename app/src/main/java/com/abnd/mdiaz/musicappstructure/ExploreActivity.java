@@ -2,14 +2,13 @@ package com.abnd.mdiaz.musicappstructure;
 
 import android.os.Bundle;
 
-public class MainActivity extends BaseActivity {
+public class ExploreActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_explore);
 
-        super.onCreateDrawer(1);
+        super.onCreateDrawer(3);
     }
-
 }

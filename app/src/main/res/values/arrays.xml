@@ -3,7 +3,7 @@
     <string-array name="layers_array">
         <item>Search</item>
         <item>What\'s New!</item>
-        <item>Sintel</item>
-        <item>Tears of Steel</item>
+        <item>Live</item>
+        <item>Explore</item>
     </string-array>
 </resources>

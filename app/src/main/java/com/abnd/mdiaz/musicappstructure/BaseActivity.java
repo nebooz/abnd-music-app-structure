@@ -44,28 +44,47 @@ public class BaseActivity extends AppCompatActivity {
         mDrawerList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                String classNameStorage = this.getClass().getName();
+                Intent i;
 
                 if (originalPosition == position) {
+
                     Toast.makeText(getApplicationContext(), R.string.current_activity_toast_text, Toast.LENGTH_SHORT).show();
+
                 } else {
 
                     switch (position) {
                         case 0:
-                            startActivity(new Intent(getApplicationContext(), MusicSearch.class));
-                            finish();
+                            i = new Intent(getApplicationContext(), SearchActivity.class);
+                            i.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+                            mDrawerLayout.closeDrawers();
+                            startActivity(i);
                             break;
                         case 1:
-                            startActivity(new Intent(getApplicationContext(), MainActivity.class));
-                            finish();
+                            i = new Intent(getApplicationContext(), MainActivity.class);
+                            i.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+                            mDrawerLayout.closeDrawers();
+                            startActivity(i);
+                            break;
+                        case 2:
+                            i = new Intent(getApplicationContext(), LiveActivity.class);
+                            i.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+                            mDrawerLayout.closeDrawers();
+                            startActivity(i);
+                            break;
+                        case 3:
+                            i = new Intent(getApplicationContext(), ExploreActivity.class);
+                            i.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+                            mDrawerLayout.closeDrawers();
+                            startActivity(i);
                             break;
                         default:
-                            startActivity(new Intent(getApplicationContext(), MainActivity.class));
-                            finish();
+                            i = new Intent(getApplicationContext(), MainActivity.class);
+                            i.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+                            mDrawerLayout.closeDrawers();
+                            startActivity(i);
                             break;
                     }
                 }
-
             }
         });
     }

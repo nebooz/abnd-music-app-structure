@@ -18,8 +18,10 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MusicSearch"
+            android:name=".SearchActivity"
             android:label="@string/music_search_label" />
+        <activity android:name=".LiveActivity" />
+        <activity android:name=".ExploreActivity"></activity>
     </application>
 
 </manifest>
