@@ -2,4 +2,5 @@
     <string name="app_name">Music App Structure</string>
     <string name="drawer_open">Open Nav</string>
     <string name="drawer_close">Close Nav</string>
+    <string name="nav_title">Navigation!</string>
 </resources>
