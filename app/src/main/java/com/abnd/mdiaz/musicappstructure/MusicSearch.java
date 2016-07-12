@@ -8,7 +8,7 @@ public class MusicSearch extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_music_search);
-        super.onCreateDrawer();
+        super.onCreateDrawer(0);
     }
 
 }

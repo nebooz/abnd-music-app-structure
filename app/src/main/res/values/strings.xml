@@ -3,4 +3,6 @@
     <string name="drawer_open">Open Nav</string>
     <string name="drawer_close">Close Nav</string>
     <string name="nav_title">Navigation!</string>
+    <string name="music_search_label">Music Search</string>
+    <string name="main_activity_label">What\'s New</string>
 </resources>

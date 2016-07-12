@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 public class BaseActivity extends AppCompatActivity {
     public DrawerLayout mDrawerLayout;
@@ -19,7 +20,7 @@ public class BaseActivity extends AppCompatActivity {
     private ActionBarDrawerToggle mDrawerToggle;
     private String mActivityTitle;
 
-    protected void onCreateDrawer() {
+    protected void onCreateDrawer(int originalPosition) {
 
         mDrawerList = (ListView) findViewById(R.id.left_drawer);
 
@@ -28,7 +29,7 @@ public class BaseActivity extends AppCompatActivity {
         mActivityTitle = getTitle().toString();
         layers = getResources().getStringArray(R.array.layers_array);
 
-        addDrawerItems();
+        addDrawerItems(originalPosition);
         setupDrawer();
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -36,22 +37,33 @@ public class BaseActivity extends AppCompatActivity {
 
     }
 
-    private void addDrawerItems() {
+    private void addDrawerItems(final int originalPosition) {
         ArrayAdapter<String> mAdapter = new ArrayAdapter<>(this, R.layout.nav_list_item, layers);
         mDrawerList.setAdapter(mAdapter);
 
         mDrawerList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                switch (position) {
-                    case 0:
-                        startActivity(new Intent(getApplicationContext(), MusicSearch.class));
-                        finish();
-                        break;
-                    default:
-                        startActivity(new Intent(getApplicationContext(), MusicSearch.class));
-                        finish();
-                        break;
+                String classNameStorage = this.getClass().getName();
+
+                if (originalPosition == position) {
+                    Toast.makeText(getApplicationContext(), "Super Gil, same Activity", Toast.LENGTH_SHORT).show();
+                } else {
+
+                    switch (position) {
+                        case 0:
+                            startActivity(new Intent(getApplicationContext(), MusicSearch.class));
+                            finish();
+                            break;
+                        case 1:
+                            startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                            finish();
+                            break;
+                        default:
+                            startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                            finish();
+                            break;
+                    }
                 }
 
             }
