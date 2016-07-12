@@ -47,7 +47,7 @@ public class BaseActivity extends AppCompatActivity {
                 String classNameStorage = this.getClass().getName();
 
                 if (originalPosition == position) {
-                    Toast.makeText(getApplicationContext(), "Super Gil, same Activity", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), R.string.current_activity_toast_text, Toast.LENGTH_SHORT).show();
                 } else {
 
                     switch (position) {

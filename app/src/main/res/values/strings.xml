@@ -5,4 +5,5 @@
     <string name="nav_title">Navigation!</string>
     <string name="music_search_label">Music Search</string>
     <string name="main_activity_label">What\'s New</string>
+    <string name="current_activity_toast_text">That is the current Activity</string>
 </resources>
