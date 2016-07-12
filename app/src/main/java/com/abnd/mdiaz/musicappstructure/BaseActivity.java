@@ -54,39 +54,31 @@ public class BaseActivity extends AppCompatActivity {
 
                     switch (position) {
                         case 0:
-                            i = new Intent(getApplicationContext(), SearchActivity.class);
-                            i.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
-                            mDrawerLayout.closeDrawers();
-                            startActivity(i);
+                            startAppActivities(SearchActivity.class);
                             break;
                         case 1:
-                            i = new Intent(getApplicationContext(), MainActivity.class);
-                            i.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
-                            mDrawerLayout.closeDrawers();
-                            startActivity(i);
+                            startAppActivities(MainActivity.class);
                             break;
                         case 2:
-                            i = new Intent(getApplicationContext(), LiveActivity.class);
-                            i.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
-                            mDrawerLayout.closeDrawers();
-                            startActivity(i);
+                            startAppActivities(LiveActivity.class);
                             break;
                         case 3:
-                            i = new Intent(getApplicationContext(), ExploreActivity.class);
-                            i.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
-                            mDrawerLayout.closeDrawers();
-                            startActivity(i);
+                            startAppActivities(ExploreActivity.class);
                             break;
                         default:
-                            i = new Intent(getApplicationContext(), MainActivity.class);
-                            i.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
-                            mDrawerLayout.closeDrawers();
-                            startActivity(i);
+                            startAppActivities(MainActivity.class);
                             break;
                     }
                 }
             }
         });
+    }
+
+    private void startAppActivities(Class inputClass) {
+        Intent i = new Intent(getApplicationContext(), inputClass);
+        i.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+        mDrawerLayout.closeDrawers();
+        startActivity(i);
     }
 
     private void setupDrawer() {
