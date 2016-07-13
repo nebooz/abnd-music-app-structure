@@ -2,10 +2,10 @@
     <string name="app_name">Music App Structure</string>
     <string name="drawer_open">Open Nav</string>
     <string name="drawer_close">Close Nav</string>
-    <string name="nav_title">Navigation!</string>
+    <string name="nav_title">Where next?</string>
     <string name="music_search_label">Music Search</string>
     <string name="main_activity_label">What\'s New</string>
-    <string name="current_activity_toast_text">That is the current Activity</string>
+    <string name="current_activity_toast_text">You are already looking at it!</string>
     <string name="live_activity_label">Live</string>
     <string name="explore_activity_label">Explore</string>
 </resources>
