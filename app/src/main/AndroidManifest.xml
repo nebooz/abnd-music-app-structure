@@ -20,8 +20,12 @@
         <activity
             android:name=".SearchActivity"
             android:label="@string/music_search_label" />
-        <activity android:name=".LiveActivity" />
-        <activity android:name=".ExploreActivity"></activity>
+        <activity
+            android:name=".LiveActivity"
+            android:label="@string/live_activity_label" />
+        <activity
+            android:name=".ExploreActivity"
+            android:label="@string/explore_activity_label" />
     </application>
 
 </manifest>

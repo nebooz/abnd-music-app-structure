@@ -8,9 +8,12 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class BaseActivity extends AppCompatActivity {
@@ -37,8 +40,12 @@ public class BaseActivity extends AppCompatActivity {
 
     }
 
+    /* Not entirely sure why the original Position value has to be final...
+    All I wanted was to add an icon next to each entry on the list... I had to go ahead and
+    make a new custom adapter class! Couldn't find any other way of handling that. Luckily,
+    I did the same in the previous exercise. */
     private void addDrawerItems(final int originalPosition) {
-        ArrayAdapter<String> mAdapter = new ArrayAdapter<>(this, R.layout.nav_list_item, layers);
+        ArrayAdapter<String> mAdapter = new CustomListAdapter();
         mDrawerList.setAdapter(mAdapter);
 
         mDrawerList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -135,5 +142,46 @@ public class BaseActivity extends AppCompatActivity {
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
         mDrawerToggle.onConfigurationChanged(newConfig);
+    }
+
+    private class CustomListAdapter extends ArrayAdapter<String> {
+        public CustomListAdapter() {
+            super(getApplicationContext(), R.layout.nav_list_item, layers);
+        }
+
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent) {
+
+            //Should use a View Holder but it is just 4 entries! (maybe 6 tops)
+            convertView = getLayoutInflater().inflate(R.layout.nav_list_item, parent, false);
+
+            ImageView holderImageView = (ImageView) convertView.findViewById(R.id.list_item_icon);
+            TextView holderTextView = (TextView) convertView.findViewById(R.id.list_item_text);
+
+            switch (position) {
+                case 0:
+                    holderTextView.setText(layers[position]);
+                    holderImageView.setImageResource(R.drawable.search);
+                    break;
+                case 1:
+                    holderTextView.setText(layers[position]);
+                    holderImageView.setImageResource(R.drawable.w_new);
+                    break;
+                case 2:
+                    holderTextView.setText(layers[position]);
+                    holderImageView.setImageResource(R.drawable.live);
+                    break;
+                case 3:
+                    holderTextView.setText(layers[position]);
+                    holderImageView.setImageResource(R.drawable.explore);
+                    break;
+                default:
+                    holderTextView.setText(layers[position]);
+                    holderImageView.setImageResource(R.drawable.search);
+                    break;
+            }
+
+            return convertView;
+        }
     }
 }
