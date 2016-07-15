@@ -8,4 +8,12 @@
     <string name="current_activity_toast_text">You are already looking at it!</string>
     <string name="live_activity_label">Live</string>
     <string name="explore_activity_label">Explore</string>
+    <string name="whats_new_activity_text_explanation">I love Spotify, which was the first thing I opened after reading about this assignment. In this screen/activity, I would show new album releases and interesting playlists based on the user\'s listening patterns. This would be a simplified version of the Home screen on Spotify.</string>
+    <string name="music_search_activity_text_explanation">I think this one is quite self-explanatory. The idea would be to grab the user\'s input into an EditText field (maybe) and search through songs, albums, artists or playlist. This is, I believe, the most standard function of all music streaming applications.</string>
+    <string name="whats_new_activity_text_title">What\'s New Activity</string>
+    <string name="music_search_activity_text_title">Music Search Activity</string>
+    <string name="live_activity_text_title">Live Activity</string>
+    <string name="live_activity_text_explanation">In this activity, I would have wanted to show a globe with the current (hourly or real-time) most popular songs being listened per country or region. I think it would be fun to jump into listening to some completely new music, or just notice the predominance of a global hit.</string>
+    <string name="explore_activity_text_title">Explore Activity</string>
+    <string name="explore_activity_text_explanation">This is where the more diverse recommendations would appear. I could see what is being listened by other users nearby (country-wise) and some new music that would go beyond my preferred genres in order to get to know new music that I may enjoy but was to far from my musical core.</string>
 </resources>
