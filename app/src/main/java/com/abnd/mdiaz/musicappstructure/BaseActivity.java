@@ -29,9 +29,17 @@ public class BaseActivity extends AppCompatActivity {
 
         // R.id.drawer_layout should be in every activity with exactly the same id.
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+
+        //Replace the title with the label defined in the manifest per activity.
         mActivityTitle = getTitle().toString();
+
+        //Fills the list with the small array of button/options.
         layers = getResources().getStringArray(R.array.layers_array);
 
+        /*
+        Still not liking this. I'm passing this int to the method just to know who actually
+        is using it!
+        */
         addDrawerItems(originalPosition);
         setupDrawer();
 
@@ -158,6 +166,14 @@ public class BaseActivity extends AppCompatActivity {
             ImageView holderImageView = (ImageView) convertView.findViewById(R.id.list_item_icon);
             TextView holderTextView = (TextView) convertView.findViewById(R.id.list_item_text);
 
+
+            /*
+            In my previous project I created an object to hold a bunch of different properties
+            for each question. In this one case, I only have 2 things, the image and the text...
+            I should probably have made an object anyway, but I thought that even on a real app
+            the amount of options on the menu wouldn't be a as dynamic as adding or removing
+            questions from a quiz app.
+            */
             switch (position) {
                 case 0:
                     holderTextView.setText(layers[position]);
