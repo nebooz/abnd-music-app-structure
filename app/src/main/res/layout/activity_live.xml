@@ -9,6 +9,7 @@
         android:layout_height="match_parent">
 
         <LinearLayout
+            android:id="@+id/button_set_container"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@drawable/grad_bg_lime500"
@@ -20,6 +21,7 @@
 
             <TextView
                 style="@style/activityBody"
+                android:layout_marginBottom="16dp"
                 android:text="@string/live_activity_text_explanation" />
 
         </LinearLayout>
